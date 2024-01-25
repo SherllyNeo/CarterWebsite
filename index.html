@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title></title>
+        <title>Multiplication Game</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="css/style.css" rel="stylesheet">
+        <script src="js/index.js"></script>
     </head>
     <body>
-
-    <h1>Test</h1>
-    
+    <div id="main">
+        <h1> Welcome Miss Granger, please test your mental abilities here <h1>
+    <input class="box" id="digits" type="text" onclick="clear()" placeholder="Please input how many digits you would like">
+    <input class="box" id="time" type="text" onclick="clear()" placeholder="Please input how much time in seconds you want">
+    <button class="btn" onclick="Game()" type="button">Play</button>
+    </div>
     </body>
 </html>
