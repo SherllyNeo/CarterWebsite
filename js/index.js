@@ -15,7 +15,7 @@ function DateToStr(date) {
                 + date.getSeconds();
 }
 function EndScreen() {
-    document.getElementById("main").innerHTML = `<p class="reveal"> You solved ${total} questions and got ${correct} correct, with an accuracy of ${Math.round(correct/total * 100)}% </p> <br> ${incorrectStr}`;
+    document.getElementById("main").innerHTML = `<h1 class="reveal"> You solved ${total} questions and got ${correct} correct, with an accuracy of ${Math.round(correct/total * 100)}% </h1> <br> ${incorrectStr}`;
 }
 
 function PlayRound(AmountOfDigits,TimeToFinish) {
