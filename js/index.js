@@ -32,6 +32,7 @@ function PlayRound(AmountOfDigits,TimeToFinish) {
 
     document.getElementById("main").innerHTML = `<p class="question"> ${NumberA} x ${NumberB} =   </p>     <input class="box" id="answer" type="text" autofocus onfocus="this.select()" placeholder="Please Type The Answer">`;
     const node = document.getElementById("answer");
+    node.focus();
     node.addEventListener("keyup", function(event) {
         if (event.key === "Enter") {
             if (NumberA * NumberB == parseInt(document.getElementById("answer").value)) {
