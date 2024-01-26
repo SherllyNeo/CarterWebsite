@@ -41,7 +41,7 @@ function PlayRound(AmountOfDigits,TimeToFinish) {
             }
             else {
                 console.log("incorrect, answer is ",NumberA*NumberB);
-                incorrectStr +=  ` <p class="revealBad"> ${NumberA} x ${NumberB} = ${NumberA * NumberB}, not ${document.getElementById("answer").value} <\[> <br>`
+                incorrectStr +=  ` <p class="revealBad"> ${NumberA} x ${NumberB} = ${NumberA * NumberB}, not ${document.getElementById("answer").value} <\p> <br>`
             }
             PlayRound(AmountOfDigits,TimeToFinish);
         }
