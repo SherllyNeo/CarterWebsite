@@ -4,6 +4,7 @@ function GenerateRandomNumber(amountOfDigits) {
 
 var correct = 0;
 var total = 0;
+var incorrectStr = "";
 
 function DateToStr(date) {
     return "Date: " + date.getDate() + "/"
@@ -14,7 +15,7 @@ function DateToStr(date) {
                 + date.getSeconds();
 }
 function EndScreen() {
-    document.getElementById("main").innerHTML = `<p class="reveal"> You solved ${total} questions and got ${correct} correct, with an accuracy of ${Math.round(correct/total * 100)}% </p>`;
+    document.getElementById("main").innerHTML = `<p class="reveal"> You solved ${total} questions and got ${correct} correct, with an accuracy of ${Math.round(correct/total * 100)}% </p> <br> ${incorrectStr}`;
 }
 
 function PlayRound(AmountOfDigits,TimeToFinish) {
@@ -29,7 +30,7 @@ function PlayRound(AmountOfDigits,TimeToFinish) {
     var NumberA = GenerateRandomNumber(AmountOfDigits);
     var NumberB = GenerateRandomNumber(AmountOfDigits);
 
-    document.getElementById("main").innerHTML = `<p class="question"> ${NumberA} x ${NumberB} =   </p>     <input class="box" id="answer" type="text" placeholder="Please Type The Answer">`;
+    document.getElementById("main").innerHTML = `<p class="question"> ${NumberA} x ${NumberB} =   </p>     <input class="box" id="answer" type="text" autofocus onfocus="this.select()" placeholder="Please Type The Answer">`;
     const node = document.getElementById("answer");
     node.addEventListener("keyup", function(event) {
         if (event.key === "Enter") {
@@ -39,6 +40,7 @@ function PlayRound(AmountOfDigits,TimeToFinish) {
             }
             else {
                 console.log("incorrect, answer is ",NumberA*NumberB);
+                incorrectStr +=  ` <p class="revealBad"> ${NumberA} x ${NumberB} = ${NumberA * NumberB}, not ${document.getElementById("answer").value} <\[> <br>`
             }
             PlayRound(AmountOfDigits,TimeToFinish);
         }

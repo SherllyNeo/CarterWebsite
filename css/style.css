@@ -66,6 +66,12 @@ input:disabled { background-color:#0F0;}
 
 }
 
+.revealBad {
+  color: #194D33;
+  text-align: center;
+
+}
+
 .question {
   color: #b3b3b3;
   text-align: center;
